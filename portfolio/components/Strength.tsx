@@ -1,7 +1,12 @@
 ﻿"use client";
 
 export default function Strength() {
-  const strengths = [
+  const strengths: {
+    title: string;
+    description: string;
+    icon: string;
+    extra?: string;
+  }[] = [
     {
       title: "Component Architecture",
       description:
