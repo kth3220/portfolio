@@ -11,7 +11,7 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="text-4xl md:text-5xl font-bold">Thank you</div>
             <p className="text-gray-300 leading-relaxed">
-              포트폴리오를 봐주셔서 감사합니다. 협업이나 지원 관련 문의는 아래 채널로 연락 주세요.
+              포트폴리오를 봐주셔서 감사합니다.
             </p>
           </div>
 

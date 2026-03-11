@@ -33,9 +33,13 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <div className="hidden lg:block">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-lg bg-gray-200 flex items-center justify-center text-gray-500">
-              프로필 사진
+          <div className="hidden lg:flex lg:justify-center">
+            <div className="h-56 w-40 rounded-2xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center p-2">
+              <img
+                src="/profile-photo.jpg"
+                alt="김태희 프로필 사진"
+                className="h-full w-full object-contain rounded-xl"
+              />
             </div>
           </div>
         </div>
