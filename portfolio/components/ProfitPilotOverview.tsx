@@ -28,9 +28,32 @@ export default function ProfitPilotOverview() {
                 AI 투자 시뮬레이션 웹 서비스
               </p>
               <p className="text-gray-600 leading-relaxed">
-                AI 챗봇과의 대화를 통해 가상 주식 매매를 진행하고
-                거래 내역과 수익률을 확인할 수 있는 투자 시뮬레이션 서비스입니다.
+                AI 챗봇과 대화하며 가상 주식을 매매하고,
+                실시간 시세/거래 내역/수익률을 확인할 수 있는 서비스입니다.
               </p>
+            </div>
+
+            <div className="space-y-2 text-gray-700">
+              <p className="font-semibold">담당 역할 (Frontend 중심)</p>
+              <p className="text-sm text-gray-600">
+                UI/UX 기획 및 화면 설계(Figma) 주도
+              </p>
+              <p className="text-sm text-gray-600">
+                홈/마켓/포트폴리오/리더보드/AI 챗봇 화면 구현
+              </p>
+              <p className="text-sm text-gray-600">
+                실시간 데이터 연동 및 상태 동기화
+              </p>
+              <p className="text-sm text-gray-600">
+                다크/라이트 테마 전환, Toast/피드백 UX 구현
+              </p>
+              <p className="text-sm text-gray-600">
+                공통 스타일 구조 정리 및 인터랙션 일관성 개선
+              </p>
+            </div>
+
+            <div className="text-sm text-gray-600">
+              사용 기술: JavaScript (ES Modules) / Flask / Chart.js / HTML/CSS
             </div>
 
             <div className="p-4 rounded-lg bg-emerald-50 border-l-4 border-emerald-600 text-sm text-emerald-900">

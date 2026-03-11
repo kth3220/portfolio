@@ -36,6 +36,9 @@ export default function Strength() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             핵심 역량 & 작업 방식
           </h2>
+          <p className="mt-3 text-gray-600">
+            구조 설계, 상태 관리, 성능 개선 관점에서 역량을 정리했습니다.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -44,6 +47,7 @@ export default function Strength() {
               "from-blue-500 to-cyan-500",
               "from-purple-500 to-pink-500",
               "from-orange-500 to-red-500",
+              "from-emerald-500 to-teal-500",
             ];
             return (
               <div

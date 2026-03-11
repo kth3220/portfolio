@@ -28,13 +28,16 @@ export default function VanillaSPA() {
                 Vanilla JavaScript 기반 SPA 구현 프로젝트
               </p>
               <p className="text-gray-600 mb-6">
-                프레임워크 없이 SPA의 핵심 구조(라우팅 / 상태 관리 / UI 렌더링)를 직접 구현했습니다.
+                프레임워크 없이 SPA의 핵심 구조(라우팅 / 상태 관리 / 렌더링 흐름)를 직접 구현했습니다.
               </p>
             </div>
 
             <p className="text-gray-700">
-              이를 통해 React와 같은 프레임워크의 내부 동작을 이해하고
-              웹 애플리케이션 구조에 대한 이해도를 높였습니다.
+              이를 통해 SPA 구조와 상태 흐름을 이해하고 웹 애플리케이션 구조에 대한 이해도를 높였습니다.
+            </p>
+            <p className="text-sm text-gray-600">역할: 구조 설계 / 핵심 로직 구현</p>
+            <p className="text-sm text-gray-600">
+              사용 기술: JavaScript / History API / Custom JSX / VDOM Diff
             </p>
 
             <div className="p-4 rounded-lg bg-amber-50 border-l-4 border-amber-600 text-sm text-amber-900">

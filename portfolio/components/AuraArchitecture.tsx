@@ -20,6 +20,9 @@ export default function AuraArchitecture() {
         <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           아키텍처
         </h2>
+        <p className="mt-3 text-gray-600">
+          데이터 흐름과 구성 요소의 연결 구조를 정리했습니다.
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-3">
@@ -41,20 +44,37 @@ export default function AuraArchitecture() {
                 Architecture Diagram
               </p>
               <div className="rounded-2xl border border-blue-100 bg-white p-4 shadow-sm">
-                <ImageFrame
-                  src="/aura-architecture-diagram.png"
-                  alt="Aura.ai 아키텍처 다이어그램"
-                  className="h-64"
-                  fit="contain"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold text-blue-900">
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    User
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    Next.js Frontend
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    FastAPI Server
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    OpenAI API
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    Response Data
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    Zustand Store
+                  </div>
+                  <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                    UI Rendering
+                  </div>
+                </div>
+                <p className="mt-3 text-xs text-gray-500">
+                  User → Next.js Frontend → FastAPI → OpenAI → Response → Zustand Store → UI
+                </p>
               </div>
-              <p className="text-xs text-gray-500 mt-2">
-                이미지 파일: aura-architecture-diagram.png
-              </p>
             </div>
 
             <p>서비스는 Next.js 기반 프론트엔드와 FastAPI 서버로 구성되었습니다.</p>
-            <p>사용자 입력은 API 서버로 전달되고 OpenAI API를 통해 추천 데이터를 생성합니다.</p>
+            <p>사용자 입력은 FastAPI로 전달되고 OpenAI API를 통해 추천 데이터를 생성합니다.</p>
             <p>추천 데이터는 Zustand 상태로 관리되어 UI에 반영됩니다.</p>
             <p>AI 응답을 프론트엔드 상태로 관리해 UI 업데이트 흐름을 단순화했습니다.</p>
 
@@ -74,7 +94,7 @@ export default function AuraArchitecture() {
                     <circle cx="12" cy="12" r="8" />
                     <path d="M4 12h16M12 4c2.8 3 2.8 13 0 16M12 4c-2.8 3-2.8 13 0 16" />
                   </svg>
-                  API Request
+                  FastAPI Request
                 </span>
                 <span className="text-blue-400">→</span>
                 <span className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white border border-blue-200">

@@ -42,17 +42,29 @@ export default function AuraOverview() {
                   <span className="text-blue-600">✔</span> 백엔드 API 구현
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-blue-600">✔</span> 배포
+                  <span className="text-blue-600">✔</span> 배포 (Vercel / AWS EC2)
                 </li>
               </ul>
             </div>
+
+            <div className="text-sm text-gray-600">
+              사용 기술: Next.js / TypeScript / Zustand / FastAPI / OpenAI API
+            </div>
+
+            <div className="p-4 rounded-lg bg-blue-50 border-l-4 border-blue-600 text-sm text-blue-900">
+              임팩트: 챗봇 입력 → 추천 카드까지의 흐름을 상태로 관리해 UI 업데이트를
+              단순화했습니다.
+            </div>
+            <p className="text-sm text-gray-600">
+              사용자 입력 → AI 추천 생성 → Zustand 상태 저장 → 추천 카드 UI 렌더링
+            </p>
 
             <div className="flex flex-wrap gap-4">
               <a
                 href="https://aura-ai-three-kappa.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+                className="px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 ring-2 ring-blue-200/60 animate-[pulse_2.5s_ease-in-out_infinite]"
               >
                 Live Demo
               </a>
@@ -65,18 +77,6 @@ export default function AuraOverview() {
                 GitHub
               </a>
             </div>
-
-            <div className="text-sm text-gray-600">
-              사용 기술: Next.js / TypeScript / Zustand / FastAPI / OpenAI API
-            </div>
-
-            <div className="p-4 rounded-lg bg-blue-50 border-l-4 border-blue-600 text-sm text-blue-900">
-              임팩트: 챗봇 입력 → 추천 카드까지의 흐름을 단일 상태로 관리해 UI
-              업데이트를 단순화했습니다.
-            </div>
-            <p className="text-sm text-gray-600">
-              사용자 입력 → AI 추천 생성 → Zustand 상태 저장 → 추천 카드 UI 렌더링
-            </p>
           </div>
 
           <div className="flex items-center justify-center order-1 lg:order-2">

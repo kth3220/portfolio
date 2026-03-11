@@ -16,6 +16,9 @@ export default function MarketUpdateFeature() {
         <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
           주요 기능
         </h2>
+        <p className="mt-3 text-gray-600">
+          거래 흐름에 필요한 핵심 기능을 정리했습니다.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {items.map((item) => (
@@ -31,6 +34,7 @@ export default function MarketUpdateFeature() {
                 alt={item.title}
                 className="h-48"
                 fit="contain"
+                showLoading={false}
               />
             </div>
           ))}
@@ -38,7 +42,10 @@ export default function MarketUpdateFeature() {
 
         <div className="mt-12 text-gray-700">
           <h3 className="text-xl font-bold mb-4">주요 기능 요약</h3>
-          <p>상품 등록, 상품 상세 조회, 사용자 간 채팅</p>
+          <p>
+            상품 등록, 상품 상세 조회, 사용자 간 실시간 채팅, 관심상품(좋아요) 목록,
+            마이페이지 작성글 목록
+          </p>
         </div>
       </div>
     </section>

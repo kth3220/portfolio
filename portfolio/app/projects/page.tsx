@@ -60,6 +60,7 @@ export default function ProjectsPage() {
                   alt={`${project.title} 대표 화면`}
                   className="h-44"
                   fit="contain"
+                  showLoading={false}
                 />
                 <h2 className="mt-4 text-xl font-semibold text-gray-900">
                   {project.title}

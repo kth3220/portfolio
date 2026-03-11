@@ -32,6 +32,9 @@ export default function TechStack() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             기술 스택 & 사용 맥락
           </h2>
+          <p className="mt-3 text-gray-600">
+            프로젝트에 실제 적용한 기술 기준으로 정리했습니다.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -83,7 +86,6 @@ export default function TechStack() {
                       key={item}
                       className={`px-4 py-2 rounded-lg ${color.badge} text-sm font-semibold hover:shadow-md transition-all duration-300 transform hover:scale-105 cursor-default flex items-center gap-2`}
                     >
-                      <span className="inline-flex h-5 w-5 rounded-full bg-white/70 border border-white" />
                       <span>{item}</span>
                     </div>
                   ))}

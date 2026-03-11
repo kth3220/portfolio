@@ -13,6 +13,7 @@ import MarketUpdateFeature from "@/components/MarketUpdateFeature";
 import MarketUpdateProblem from "@/components/MarketUpdateProblem";
 import ProfitPilotOverview from "@/components/ProfitPilotOverview";
 import ProfitPilotFeature from "@/components/ProfitPilotFeature";
+import ProfitPilotProblem from "@/components/ProfitPilotProblem";
 import VanillaSPA from "@/components/VanillaSPA";
 import SPAArchitecture from "@/components/SPAArchitecture";
 import DevelopmentPhilosophy from "@/components/DevelopmentPhilosophy";
@@ -42,6 +43,7 @@ export default function Home() {
       {/* ProfitPilot Project */}
       <ProfitPilotOverview />
       <ProfitPilotFeature />
+      <ProfitPilotProblem />
 
       {/* Vanilla SPA Project */}
       <VanillaSPA />

@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   fit?: "cover" | "contain";
   showNameOnError?: boolean;
+  showLoading?: boolean;
 };
 
 export default function ImageFrame({
@@ -16,6 +17,7 @@ export default function ImageFrame({
   className = "h-48",
   fit = "cover",
   showNameOnError = true,
+  showLoading = false,
 }: Props) {
   const [status, setStatus] = useState<"loading" | "loaded" | "error">(
     "loading"
@@ -36,7 +38,7 @@ export default function ImageFrame({
         onError={() => setStatus("error")}
       />
 
-      {status === "loading" && (
+      {status === "loading" && showLoading && (
         <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100" />
       )}
 

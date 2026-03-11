@@ -51,6 +51,8 @@ const projectData: Record<
       "챗봇 기반 코디 추천",
       "스타일 선택 모달",
       "추천 결과 카드 UI",
+      "대화 저장 기능",
+      "간편 로그인",
     ],
     architecture: [
       "User → Next.js Frontend",
@@ -63,22 +65,35 @@ const projectData: Record<
       {
         problem: "GPT 응답 지연",
         solution: "비동기 요청 구조 개선 및 로딩 UI 추가",
-        result: "체감 대기 시간을 줄이고 사용자 경험을 개선했습니다.",
+        result: "체감 대기 시간을 줄여 사용자 경험을 개선했습니다.",
       },
       {
         problem: "SSR 환경 window 접근 오류",
-        solution: "dynamic import로 클라이언트 전용 실행",
+        solution:
+          "클라이언트 전용 분기 처리(typeof window 체크)로 안정적으로 렌더링되도록 개선",
         result: "SSR 환경에서도 안정적으로 렌더링했습니다.",
       },
       {
         problem: "GPT JSON 구조 불안정",
-        solution: "응답 파싱 및 스키마 검증 로직 추가",
-        result: "추천 카드 렌더링 안정성을 확보했습니다.",
+        solution: "응답 파싱 로직을 보강해 프론트엔드에서 일관된 구조로 변환",
+        result: "UI 예외 상황을 줄이고 추천 카드 렌더링 안정성을 높였습니다.",
+      },
+      {
+        problem: "상태 관리 분리로 인한 UI 흐름 복잡도 증가",
+        solution:
+          "Zustand를 기능별 스토어(채팅/요약/컨텍스트/인증)로 분리해 상태 흐름을 명확히 정리",
+        result: "추천 카드 렌더링 흐름을 안정적으로 관리할 수 있었습니다.",
+      },
+      {
+        problem: "배포 장애 대응 (EC2 환경변수 / IP 변경)",
+        solution:
+          ".env 설정 누락과 IP 변경 원인을 파악해 환경변수 동기화 및 Elastic IP를 적용",
+        result: "배포 안정성을 확보하고 운영 이슈 대응 경험을 쌓았습니다.",
       },
     ],
     learnings: [
-      "AI 응답 데이터를 프론트엔드 상태로 안정적으로 관리하는 방법",
-      "챗봇 UI 구조 설계와 상태 관리 흐름 경험",
+      "AI 응답 데이터를 프론트엔드 상태로 안정적으로 관리",
+      "챗봇 UI 구조와 상태 관리 연결 흐름 경험",
     ],
     links: [
       { label: "Live Demo", href: "https://aura-ai-three-kappa.vercel.app/" },
@@ -94,7 +109,7 @@ const projectData: Record<
     ],
     summary: [
       { label: "형태", value: "개인 프로젝트" },
-      { label: "역할", value: "기획 · 디자인 · 프론트엔드 · 백엔드" },
+      { label: "역할", value: "기획 · 디자인 · 프론트엔드 · 백엔드 · 배포" },
       { label: "핵심", value: "AI 추천 데이터 흐름 설계" },
     ],
     tags: ["Next.js", "FastAPI", "OpenAI API", "Zustand"],
@@ -104,27 +119,40 @@ const projectData: Record<
     subtitle: "실시간 채팅 기반 중고 거래 플랫폼",
     overview: [
       "사용자가 상품을 등록하고 채팅으로 거래하는 서비스입니다.",
-      "Figma로 UI 구조를 설계한 뒤 React 컴포넌트로 구현했습니다.",
+      "Figma로 전 화면 UI 구조를 설계한 뒤 React 컴포넌트로 구현했습니다.",
     ],
     tech: [
-      { label: "Frontend", items: ["React", "TypeScript"] },
-      { label: "Backend", items: ["Firebase"] },
+      {
+        label: "Frontend",
+        items: ["React", "Redux Toolkit", "React Router", "Axios"],
+      },
+      {
+        label: "Backend",
+        items: ["Spring Boot", "WebSocket(STOMP)", "MySQL", "Redis"],
+      },
     ],
-    features: ["상품 등록", "상품 상세", "실시간 채팅"],
+    features: [
+      "상품 등록",
+      "상품 상세",
+      "사용자 간 실시간 채팅",
+      "관심상품(좋아요) 목록",
+      "마이페이지 작성글 목록",
+    ],
     architecture: [
-      "Client → Firebase Realtime DB",
-      "Realtime DB → UI 업데이트",
+      "Client → Spring Boot REST API",
+      "WebSocket(STOMP) → 실시간 채팅 UI 업데이트",
     ],
     problems: [
       {
-        problem: "채팅 데이터 실시간 반영 지연",
-        solution: "Realtime DB 리스너 기반으로 즉시 반영",
-        result: "메시지 지연을 최소화했습니다.",
+        problem: "마이페이지 작성글 목록이 비어 보이던 문제",
+        solution: "/mypage/my-product 응답 구조에 맞춰 바인딩 로직을 수정",
+        result: "작성글 목록이 정상 렌더링되어 탐색 흐름이 개선되었습니다.",
       },
     ],
     learnings: [
-      "실시간 데이터 흐름 설계 경험",
-      "컴포넌트 단위 UI 구현 역량",
+      "상태/라우팅 흐름을 정리해 UI 전환 경험을 개선",
+      "실시간 채팅 UI 분리(새 창) 설계 경험",
+      "API 응답 구조에 맞춘 데이터 바인딩 설계",
     ],
     images: [
       { label: "메인 화면", filename: "market-main-long.png" },
@@ -137,26 +165,37 @@ const projectData: Record<
     ],
     summary: [
       { label: "형태", value: "팀 프로젝트" },
-      { label: "역할", value: "프론트엔드 40%" },
-      { label: "핵심", value: "실시간 채팅 UI 구현" },
+      { label: "역할", value: "프론트엔드 40% (프론트 2인 중 1명)" },
+      { label: "핵심", value: "채팅 UI 구현 및 채팅 전환 흐름 개선" },
     ],
-    tags: ["React", "Firebase", "Realtime DB", "Chat"],
+    tags: ["React", "Spring Boot", "WebSocket", "Chat"],
   },
   profit: {
     title: "ProfitPilot",
     subtitle: "AI 투자 시뮬레이션 웹 서비스",
     overview: [
-      "챗봇과 대화하며 주식 매매를 진행하고 수익률을 확인합니다.",
-      "대화형 인터페이스로 투자 전략 학습 경험을 제공합니다.",
+      "AI 챗봇과 대화하며 가상 주식을 매매하고,",
+      "실시간 시세/거래 내역/수익률을 확인할 수 있는 투자 시뮬레이션입니다.",
     ],
     tech: [
-      { label: "Frontend", items: ["React", "TypeScript"] },
-      { label: "UI", items: ["Chart", "Dashboard"] },
+      {
+        label: "Frontend",
+        items: ["JavaScript(ES Modules)", "HTML/CSS", "Chart.js"],
+      },
+      { label: "Template", items: ["Jinja"] },
+      { label: "Backend", items: ["Flask"] },
     ],
-    features: ["주식 매매", "거래 내역", "수익률 분석"],
+    features: [
+      "주식 매매",
+      "거래 내역",
+      "수익률 분석",
+      "실시간 시세 반영",
+      "AI 챗봇",
+      "테마 전환",
+    ],
     architecture: [
-      "Client 상태 → 거래/수익률 계산",
-      "분석 결과 → UI 렌더링",
+      "실시간 데이터 수신 → 화면 상태 동기화",
+      "차트/요약 카드 렌더링",
     ],
     problems: [
       {
@@ -164,9 +203,19 @@ const projectData: Record<
         solution: "핵심 지표를 요약 카드와 차트로 분리",
         result: "시각적 부담을 줄이고 흐름을 단순화했습니다.",
       },
+      {
+        problem: "실시간 데이터 누적 렌더링 부담",
+        solution: "표시 데이터 개수 상한을 적용",
+        result: "장시간 사용 시에도 반응성을 유지했습니다.",
+      },
+      {
+        problem: "테마 전환 시 초기 깜빡임",
+        solution: "초기 로드 단계에서 저장된 테마를 선적용",
+        result: "일관된 첫 화면 경험을 제공했습니다.",
+      },
     ],
     learnings: [
-      "데이터 중심 대시보드 UI 설계",
+      "데이터 중심 대시보드 UI 설계 경험",
       "사용자 흐름을 고려한 화면 구조화",
     ],
     images: [
@@ -179,43 +228,72 @@ const projectData: Record<
       { label: "AI 챗봇", filename: "profit-chatbot.png" },
     ],
     summary: [
-      { label: "형태", value: "개인 프로젝트" },
-      { label: "역할", value: "UI/로직 설계" },
-      { label: "핵심", value: "투자 시뮬레이션 UX" },
+      { label: "형태", value: "팀 프로젝트" },
+      { label: "역할", value: "UI/UX 설계(Figma), 실시간 데이터 연동 UI" },
+      { label: "핵심", value: "실시간 투자 UX 설계" },
     ],
-    tags: ["React", "TypeScript", "Chart", "Dashboard"],
+    tags: ["JavaScript", "Flask", "Chart.js", "Jinja"],
   },
   spa: {
     title: "Vanilla JS SPA",
     subtitle: "프레임워크 없이 구현한 SPA",
     overview: [
-      "라우팅, 상태 관리, UI 렌더링을 순수 JavaScript로 직접 구현했습니다.",
-      "프레임워크 내부 동작을 이해하고 구조 설계 감각을 강화했습니다.",
+      "라우팅, 상태 관리, 렌더링 흐름을 순수 JavaScript로 직접 구현했습니다.",
+      "SPA 구조와 상태 흐름을 이해하고 구조 설계 감각을 강화했습니다.",
     ],
     tech: [
       { label: "Core", items: ["JavaScript", "History API"] },
-      { label: "Pattern", items: ["Store", "Observer", "Pub-Sub"] },
+      { label: "Pattern", items: ["Store", "Observer"] },
     ],
-    features: ["라우팅", "상태 관리", "UI 렌더링"],
+    features: [
+      "라우팅",
+      "상태 관리",
+      "VDOM 렌더링",
+      "로그인/로그아웃",
+      "게시글 CRUD & 검색",
+    ],
     architecture: [
       "History API 기반 라우터",
       "Global Store + Observer",
       "상태 변경 → UI 렌더링",
+      "커스텀 JSX → VDOM → diff 업데이트",
     ],
     problems: [
       {
-        problem: "렌더링 중복 발생",
-        solution: "구독 기반 업데이트로 개선",
-        result: "불필요한 렌더링을 줄였습니다.",
+        problem: "새로고침 없이 화면 전환이 필요",
+        solution: "History API 라우터 구현",
+        result: "SPA 전환 흐름을 안정화했습니다.",
+      },
+      {
+        problem: "로그인 상태에 따른 접근 제어 필요",
+        solution: "AuthGuard + ForbiddenError 적용",
+        result: "비로그인 접근을 차단했습니다.",
+      },
+      {
+        problem: "상태 변경 시 수동 업데이트 부담",
+        solution: "Store + Observer 기반 자동 렌더링",
+        result: "화면 갱신 흐름을 단순화했습니다.",
+      },
+      {
+        problem: "이벤트 중복 등록 가능성",
+        solution: "이벤트 위임으로 처리 비용 축소",
+        result: "핸들러 관리 비용을 줄였습니다.",
+      },
+      {
+        problem: "변경된 부분만 업데이트 필요",
+        solution: "VDOM diff 업데이트(renderElement/updateElement) 적용",
+        result: "부분 렌더링으로 성능 부담을 줄였습니다.",
       },
     ],
     learnings: [
-      "프레임워크 구조에 대한 이해",
-      "문제 분해와 설계 역량 향상",
+      "라우팅/상태/렌더링의 연결 구조를 설계하며 흐름 체감",
+      "커스텀 JSX → VDOM → diff 업데이트 렌더링 구조 이해",
+      "컴포넌트 단위로 책임을 분리하는 구조화 경험",
     ],
     images: [
       { label: "메인 화면", filename: "vanilla-main.png" },
-      { label: "검색/수정", filename: "vanilla-edit.png" },
+      { label: "검색/삭제", filename: "vanilla-edit.png" },
+      { label: "로그인 화면", filename: "vanilla-login.png" },
     ],
     summary: [
       { label: "형태", value: "개인 프로젝트" },
@@ -246,9 +324,14 @@ export default function ProjectDetailPage() {
   if (!project) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center text-gray-600 space-y-2">
+        <div className="text-center text-gray-600 space-y-4">
           <p>프로젝트를 찾을 수 없습니다.</p>
-          <p className="text-xs">slug: {slug || "(empty)"}</p>
+          <Link
+            href="/projects"
+            className="inline-flex px-4 py-2 rounded-lg border border-gray-300 text-sm font-semibold text-gray-900 hover:border-blue-600 hover:text-blue-700"
+          >
+            프로젝트 목록으로 이동
+          </Link>
         </div>
       </main>
     );
@@ -279,17 +362,24 @@ export default function ProjectDetailPage() {
 
           {project.links && (
             <div className="mt-6 flex flex-wrap gap-3">
-              {project.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg border border-gray-300 text-sm font-semibold hover:border-blue-600 hover:text-blue-700"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {project.links.map((link) => {
+                const isPrimary = link.label.toLowerCase().includes("live");
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={
+                      isPrimary
+                        ? "px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
+                        : "px-4 py-2 rounded-lg border border-gray-300 text-sm font-semibold hover:border-blue-600 hover:text-blue-700"
+                    }
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
           )}
 
@@ -388,12 +478,32 @@ export default function ProjectDetailPage() {
                       Architecture Diagram
                     </p>
                     <div className="rounded-2xl border border-blue-100 bg-white p-4 shadow-sm">
-                      <ImageFrame
-                        src="/aura-architecture-diagram.png"
-                        alt="Aura.ai 아키텍처 다이어그램"
-                        className="h-72"
-                        fit="contain"
-                      />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold text-blue-900">
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          User
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          Next.js Frontend
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          FastAPI Server
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          OpenAI API
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          Response Data
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          Zustand Store
+                        </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 px-3 py-2">
+                          UI Rendering
+                        </div>
+                      </div>
+                      <p className="mt-3 text-xs text-gray-500">
+                        User → Next.js Frontend → FastAPI → OpenAI → Response → Zustand Store → UI
+                      </p>
                     </div>
                   </div>
                   <div className="rounded-xl border border-blue-100 bg-blue-50 p-4">
@@ -414,7 +524,7 @@ export default function ProjectDetailPage() {
                           <circle cx="12" cy="12" r="8" />
                           <path d="M4 12h16M12 4c2.8 3 2.8 13 0 16M12 4c-2.8 3-2.8 13 0 16" />
                         </svg>
-                        API Request
+                        FastAPI Request
                       </span>
                       <span className="text-blue-400">→</span>
                       <span className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white border border-blue-200">
@@ -452,15 +562,35 @@ export default function ProjectDetailPage() {
                 {project.problems.map((item) => (
                   <div
                     key={item.problem}
-                    className="p-4 rounded-xl border border-gray-200"
+                    className={`p-6 rounded-2xl border border-gray-200 bg-white transition-all duration-300 ${
+                      slug === "aura"
+                        ? "hover:border-blue-200 hover:shadow-lg"
+                        : "hover:border-gray-300 hover:shadow-lg"
+                    }`}
                   >
                     <p className="font-semibold text-gray-900">
                       {item.problem}
                     </p>
                     <p className="text-gray-600 text-sm mt-2">
-                      해결: {item.solution}
+                      <span
+                        className={`font-semibold ${
+                          slug === "aura" ? "text-blue-600" : "text-gray-700"
+                        }`}
+                      >
+                        해결{" "}
+                      </span>
+                      {item.solution}
                     </p>
-                    <p className="text-gray-600 text-sm">결과: {item.result}</p>
+                    <p className="text-gray-600 text-sm mt-1">
+                      <span
+                        className={`font-semibold ${
+                          slug === "aura" ? "text-blue-600" : "text-gray-700"
+                        }`}
+                      >
+                        결과{" "}
+                      </span>
+                      {item.result}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -475,28 +605,6 @@ export default function ProjectDetailPage() {
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-2xl border border-gray-200 bg-gray-50">
-              <h3 className="text-lg font-bold text-gray-900">
-                이 프로젝트가 마음에 드셨나요?
-              </h3>
-              <p className="text-gray-600 mt-2">
-                자세한 구현 내용이나 문의가 있으시면 연락 주세요.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                <a
-                  href="mailto:dddd3220@naver.com"
-                  className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700"
-                >
-                  이메일 문의
-                </a>
-                <a
-                  href="/"
-                  className="px-4 py-2 rounded-lg border border-gray-300 text-gray-900 text-sm font-semibold hover:border-blue-600 hover:text-blue-700"
-                >
-                  홈으로 돌아가기
-                </a>
-              </div>
-            </div>
 
             <div className="mt-6 p-6 rounded-2xl border border-gray-200 bg-white">
               <p className="text-sm text-gray-500">Next Project</p>
