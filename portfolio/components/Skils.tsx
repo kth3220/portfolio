@@ -2,6 +2,7 @@ export default function Skills() {
   const skills = [
     "React",
     "Next.js",
+    "Node.js",
     "TypeScript",
     "TailwindCSS",
     "JavaScript",

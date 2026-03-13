@@ -51,7 +51,8 @@ export default function MarketUpdateOverview() {
             </div>
 
             <div className="text-sm text-gray-600">
-              사용 기술: React / Redux Toolkit / Spring Boot / WebSocket(STOMP)
+              사용 기술: React / Node.js / Redux Toolkit / Spring Boot /
+              WebSocket(STOMP)
             </div>
 
             <div className="p-4 rounded-lg bg-cyan-50 border-l-4 border-cyan-600 text-sm text-cyan-900">

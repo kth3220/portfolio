@@ -13,7 +13,7 @@ export default function ProjectSummary() {
       badge: "개인",
       image: "aura-main.png",
       role: "기획 · 디자인 · 프론트 · 백엔드 · 배포",
-      stack: "Next.js · TypeScript · FastAPI · OpenAI API",
+      stack: "Next.js · Node.js · TypeScript · FastAPI · OpenAI API",
       impact:
         "AI 추천 데이터를 상태로 관리해\n챗봇 → 추천 카드 UI까지의 데이터 흐름을 설계했습니다.",
     },
@@ -24,7 +24,7 @@ export default function ProjectSummary() {
       badge: "팀",
       image: "market-main-long.png",
       role: "프론트엔드 40% (프론트 2인 중 1명)",
-      stack: "React · Spring Boot · WebSocket",
+      stack: "React · Node.js · Spring Boot · WebSocket",
       impact:
         "상품 목록/상세/채팅을 분리해\n화면 전환 흐름과 가독성을 개선했습니다.",
     },

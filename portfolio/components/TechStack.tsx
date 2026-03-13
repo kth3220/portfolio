@@ -4,7 +4,7 @@ export default function TechStack() {
   const categories = [
     {
       name: "Frontend",
-      items: ["React", "Next.js", "TypeScript"],
+      items: ["React", "Next.js", "TypeScript", "Node.js"],
     },
     {
       name: "State Management",

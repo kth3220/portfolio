@@ -39,10 +39,13 @@ const projectData: Record<
     subtitle: "AI 기반 패션 코디 추천 챗봇",
     overview: [
       "사용자의 입력과 날씨, 위치, 스타일 정보를 기반으로 코디를 추천합니다.",
-      "Next.js 프론트엔드와 FastAPI 서버를 연동해 구현했습니다.",
+      "Node.js 환경의 Next.js 프론트엔드와 FastAPI 서버를 연동해 구현했습니다.",
     ],
     tech: [
-      { label: "Frontend", items: ["Next.js", "TypeScript", "Tailwind CSS"] },
+      {
+        label: "Frontend",
+        items: ["Next.js", "Node.js", "TypeScript", "Tailwind CSS"],
+      },
       { label: "State", items: ["Zustand"] },
       { label: "Backend", items: ["FastAPI"] },
       { label: "AI", items: ["OpenAI API"] },
@@ -112,19 +115,19 @@ const projectData: Record<
       { label: "역할", value: "기획 · 디자인 · 프론트엔드 · 백엔드 · 배포" },
       { label: "핵심", value: "AI 추천 데이터 흐름 설계" },
     ],
-    tags: ["Next.js", "FastAPI", "OpenAI API", "Zustand"],
+    tags: ["Next.js", "Node.js", "FastAPI", "OpenAI API", "Zustand"],
   },
   market: {
     title: "MarketUpdate",
     subtitle: "실시간 채팅 기반 중고 거래 플랫폼",
     overview: [
       "사용자가 상품을 등록하고 채팅으로 거래하는 서비스입니다.",
-      "Figma로 전 화면 UI 구조를 설계한 뒤 React 컴포넌트로 구현했습니다.",
+      "Node.js 기반 개발 환경에서 Figma로 전 화면 UI 구조를 설계한 뒤 React 컴포넌트로 구현했습니다.",
     ],
     tech: [
       {
         label: "Frontend",
-        items: ["React", "Redux Toolkit", "React Router", "Axios"],
+        items: ["React", "Node.js", "Redux Toolkit", "React Router", "Axios"],
       },
       {
         label: "Backend",
@@ -168,7 +171,7 @@ const projectData: Record<
       { label: "역할", value: "프론트엔드 40% (프론트 2인 중 1명)" },
       { label: "핵심", value: "채팅 UI 구현 및 채팅 전환 흐름 개선" },
     ],
-    tags: ["React", "Spring Boot", "WebSocket", "Chat"],
+    tags: ["React", "Node.js", "Spring Boot", "WebSocket", "Chat"],
   },
   profit: {
     title: "ProfitPilot",

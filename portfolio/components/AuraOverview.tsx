@@ -48,7 +48,8 @@ export default function AuraOverview() {
             </div>
 
             <div className="text-sm text-gray-600">
-              사용 기술: Next.js / TypeScript / Zustand / FastAPI / OpenAI API
+              사용 기술: Next.js / Node.js / TypeScript / Zustand / FastAPI /
+              OpenAI API
             </div>
 
             <div className="p-4 rounded-lg bg-blue-50 border-l-4 border-blue-600 text-sm text-blue-900">
